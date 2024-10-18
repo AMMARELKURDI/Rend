@@ -4,7 +4,7 @@ from dash import Dash, dash_table, dcc, html, Input, Output, State
 import plotly.express as px
 
 app = Dash(__name__)
-server = app.server
+
 df = pd.read_csv("gapminder.csv")
 print
 
@@ -57,5 +57,3 @@ def download_data(n_clicks, data):
     return dcc.send_data_frame(dff.to_csv, "filtered_csv.csv")
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
